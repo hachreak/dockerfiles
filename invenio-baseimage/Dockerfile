@@ -43,9 +43,6 @@ RUN apt-get update && \
 #     su -c "echo \"CREATE DATABASE cds OWNER postgres;\" | psql" postgres && \
 #     su -c "echo \"ALTER USER postgres PASSWORD 'postgres';\" | psql" postgres
 
-ONBUILD RUN service elasticsearch restart
-ONBUILD RUN service redis-server restart
-
 RUN mkdir /src/code -p
 
 VOLUME /src/code
